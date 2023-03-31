@@ -46,7 +46,7 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 
 * Clone the repository to your local machine:
 
-	```git clone https://github.com/yunzhaoli/homework.git```
+	```git clone https://github.com/yunzhaoli/Avalara_homework.git```
 * Install the required dependencies:
 
 	```pip install -r requirements.txt```
