@@ -26,6 +26,7 @@ pipeline {
                         currentBuild.result = 'FAILURE'
                     }
                 }
+                sh 'docker rm test_container' 
             }
         }
 
