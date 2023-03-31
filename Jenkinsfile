@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                sh 'docker run --rm --name test_container yunzhaoli/homework-python python -m unittest discover -v'
+                sh 'docker run --name test_container yunzhaoli/homework-python python -m unittest discover -v'
                 script {
                     def exitCode = sh script: 'docker inspect --format=\'{{.State.ExitCode}}\' test_container', returnStatus: true
                     if (exitCode == 0) {
