@@ -47,15 +47,16 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 * Clone the repository to your local machine:
 
 	```git clone https://github.com/yunzhaoli/Avalara_homework.git```
-* Install the required dependencies:
 
-	```pip install -r requirements.txt```
+* Build and Install the package:
+
+	```make```
 
 ## Usage
 
 * Start the server by running:
 
-	```python api.py```
+	```make run```
 * The server will now be running on http://localhost:5000.
 * To check if two date ranges overlap, send a POST request to the /api/isOverlap endpoint with the following JSON payload:
 	
@@ -76,9 +77,11 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 The response will be in JSON format and will contain an "overlap" field with a boolean value indicating whether the date ranges overlap.
 * To run the tests, simply run:
 
-	```python -m unittest discover -v```
+	```make test```
 
-## Docker
+## CI
+
+### Docker
 
 You can also run the API in a Docker container. To do so:
 
@@ -94,5 +97,6 @@ You can also run the API in a Docker container. To do so:
 
 	```docker run --name <container_name> <image_name> python -m unittest discover -v```
 
-## CI
+### Jenkins
+
 A Jenkins configure file is also provided for building container image and running unit tests.
