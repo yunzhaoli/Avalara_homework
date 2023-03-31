@@ -2,15 +2,8 @@
 
 ## API Endpoint: /api/isOverlay
 
-Request: A POST request with a JSON payload containing two date ranges. Each date range is represented by an object with a start and an end property, both in the format of YYYY-MM-DD HH:MM:SS.
-
-Response: a JSON format, including the two date ranges provided in the request, as well as a boolean overlap property that indicates whether the two date ranges overlap or not.
-
-If the two date ranges overlap, the value of overlap will be true. If they do not overlap, the value of overlap will be false.
-
-### Request Method: POST
-
-#### Request Payload:
+### Request: 
+A POST request with a JSON payload containing two date ranges. Each date range contains a start and an end property, with the format of YYYY-MM-DD HH:MM:SS.
 
 ```
 {
@@ -26,7 +19,8 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 ```
 
 
-#### Response Payload:
+### Response: 
+A JSON format, including the two date ranges provided in the request, as well as a boolean overlap property that indicates whether the two date ranges overlap or not.
 
 ```
 {
@@ -42,9 +36,12 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 }
 ```
 
+### Result:
+If the two date ranges overlap, the value of overlap will be true. If they do not overlap, the value of overlap will be false.
+
 ## Installation
 
-* Clone the repository to your local machine:
+* Clone the repository:
 
 	```git clone https://github.com/yunzhaoli/Avalara_homework.git```
 
@@ -54,11 +51,13 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 
 ## Usage
 
-* Start the server by running:
+* Start the server:
 
 	```make run```
-* The server will now be running on http://localhost:5000.
-* To check if two date ranges overlap, send a POST request to the /api/isOverlap endpoint with the following JSON payload:
+	
+	The server will now be running on http://localhost:5000.
+	To check, send a POST request to the /api/isOverlap endpoint with the following JSON payload:
+	
 	
 	``` 
 	{
@@ -74,8 +73,8 @@ If the two date ranges overlap, the value of overlap will be true. If they do no
 	
 	```
 	    
-The response will be in JSON format and will contain an "overlap" field with a boolean value indicating whether the date ranges overlap.
-* To run the tests, simply run:
+
+* Run the tests:
 
 	```make test```
 
@@ -83,7 +82,7 @@ The response will be in JSON format and will contain an "overlap" field with a b
 
 ### Docker
 
-You can also run the API in a Docker container. To do so:
+The API could also be run in a Docker container:
 
 * Build the Docker image:
 
@@ -92,11 +91,10 @@ You can also run the API in a Docker container. To do so:
 
 	```docker run --name <container_name> <image_name>```
 	
-	This will start the container and run the API inside it.
-* Or to run the tests in the Docker container:
+* Run the tests:
 
 	```docker run --name <container_name> <image_name> python -m unittest discover -v```
 
 ### Jenkins
 
-A Jenkins configure file is also provided for building container image and running unit tests.
+A Jenkins configure file is also provided for building container image and running unit tests through a pipeline.
